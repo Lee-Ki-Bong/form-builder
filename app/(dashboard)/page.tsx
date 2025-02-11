@@ -36,6 +36,33 @@ function StatsCards(props: StatsCardProps) {
         loading={loading}
         className="shadow-md shadow-blue-600"
       />
+
+      <StatsCard
+        title="Total submissions"
+        icon={<LuView className="text-yellow-600" />}
+        helporText="All time form submissions"
+        value={data?.submissions.toLocaleString() || ""}
+        loading={loading}
+        className="shadow-md shadow-yellow-600"
+      />
+
+      <StatsCard
+        title="Total rate"
+        icon={<LuView className="text-green-600" />}
+        helporText="All time form rate"
+        value={data?.submissionRate.toLocaleString() || ""}
+        loading={loading}
+        className="shadow-md shadow-green-600"
+      />
+
+      <StatsCard
+        title="Bounce rate"
+        icon={<LuView className="text-red-600" />}
+        helporText="Visits that leaves without interacting"
+        value={data?.bounceRate.toLocaleString() || ""}
+        loading={loading}
+        className="shadow-md shadow-red-600"
+      />
     </div>
   )
 }

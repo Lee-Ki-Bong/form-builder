@@ -28,8 +28,8 @@ export async function GetFormStats() {
 
   const visits = stats._sum.visits || 0 // 방문 수
   const submissions = stats._sum.submissions || 0 // 제출 수
-  let submissionRate = visits > 0 ? (submissions / visits) * 100 : 0 // 제출 비율
-  const bounceRate = 100 - submissionRate // 이탈률
+  const submissionRate = visits > 0 ? (submissions / visits) * 100 : 0 // 제출 비율
+  const bounceRate = visits > 0 ? 100 - submissionRate : 0 // 이탈률
 
   return {
     visits,
