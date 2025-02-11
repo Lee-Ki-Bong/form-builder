@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { ReactNode, Suspense } from "react"
 import { LuView } from "react-icons/lu"
-import { use } from "react"
 
 export default function Home() {
   return (
@@ -64,12 +63,13 @@ function StatsCard({
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-bold">
-          {loading ?? (
+          {loading ? (
             <Skeleton>
               <span className="opacity-0">0</span>
             </Skeleton>
+          ) : (
+            value
           )}
-          {!loading && value}
         </div>
         <p className="pt-1 text-xs text-muted-foreground">{helporText}</p>
       </CardContent>
